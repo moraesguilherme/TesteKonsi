@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Guilherme\\source\\repos\\TesteKonsi\\TesteKonsi\\TesteKonsi.csproj": {}
+    "C:\\Nova pasta\\TesteKonsi\\TesteKonsi\\TesteKonsi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Guilherme\\source\\repos\\TesteKonsi\\TesteKonsi\\TesteKonsi.csproj": {
+    "C:\\Nova pasta\\TesteKonsi\\TesteKonsi\\TesteKonsi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Guilherme\\source\\repos\\TesteKonsi\\TesteKonsi\\TesteKonsi.csproj",
+        "projectUniqueName": "C:\\Nova pasta\\TesteKonsi\\TesteKonsi\\TesteKonsi.csproj",
         "projectName": "TesteKonsi",
-        "projectPath": "C:\\Users\\Guilherme\\source\\repos\\TesteKonsi\\TesteKonsi\\TesteKonsi.csproj",
-        "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Guilherme\\source\\repos\\TesteKonsi\\TesteKonsi\\obj\\",
+        "projectPath": "C:\\Nova pasta\\TesteKonsi\\TesteKonsi\\TesteKonsi.csproj",
+        "packagesPath": "C:\\Users\\Guilherme Moraes\\.nuget\\packages\\",
+        "outputPath": "C:\\Nova pasta\\TesteKonsi\\TesteKonsi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Guilherme Moraes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "http://nuget.ecs.com.br/api/nuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://grupointerplayers.pkgs.visualstudio.com/_packaging/InterPlayers-Packages/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -75,7 +73,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -87,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -14,11 +14,6 @@ namespace TesteKonsi
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
-            // Configura o objeto AppConfig com as variáveis de ambiente
-            AppConfig.Usuario = config["AppSettings:USUARIO"];
-            AppConfig.Senha = config["AppSettings:SENHA"];
-
-            // Chama o método para iniciar a API
             host.Run();
         }
 
@@ -27,7 +22,7 @@ namespace TesteKonsi
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://localhost:5001");
+                    webBuilder.UseUrls("https://localhost:5000");
                 });
     }
 }

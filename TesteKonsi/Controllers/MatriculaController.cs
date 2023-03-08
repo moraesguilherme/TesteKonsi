@@ -9,12 +9,12 @@ namespace TesteKonsi.Controllers
     public class BeneficioController : ControllerBase
     {
         [HttpPost("buscar-beneficio")]
-        public ActionResult<BeneficioResponseViewModel> BuscarBeneficio([FromBody] MatriculaRequestViewModel request)
+        public async Task<ActionResult<BeneficioResponseViewModel>> BuscarBeneficio([FromBody] MatriculaRequestViewModel request)
         {
             try
             {
                 var portalCrawler = new Crawler.PortalCrawler(request.Cpf, request.Login, request.Senha);
-                var mensagem = portalCrawler.RealizarBuscaBeneficio();
+                var mensagem = await portalCrawler.RealizarBuscaBeneficio();
 
                 var response = new BeneficioResponseViewModel
                 {
