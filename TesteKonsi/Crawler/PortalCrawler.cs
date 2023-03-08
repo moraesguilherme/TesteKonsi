@@ -54,6 +54,7 @@ namespace TesteKonsi.Crawler
             var httpClient = new HttpClient();
             var loginPageResponse = await httpClient.GetAsync(loginPageUrl);
             var loginPageHtml = await loginPageResponse.Content.ReadAsStringAsync();
+            //teste
 
             // 2. Esperar a carga do script JavaScript antes de procurar pelo formulário de login
             await Task.Delay(1000); // aguarda 1 segundo
