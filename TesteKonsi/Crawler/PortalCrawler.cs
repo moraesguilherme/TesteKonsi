@@ -42,6 +42,7 @@ namespace TesteKonsi.Crawler
         {
             using (var client = new WebClient())
             {
+                client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36");
                 return client.DownloadString(url);
             }
         }
@@ -79,7 +80,7 @@ namespace TesteKonsi.Crawler
             var postData = new List<KeyValuePair<string, string>>
             {
                 csrfField,
-                new KeyValuePair<string, string>("email", _usuario),
+                new KeyValuePair<string, string>("login", _usuario),
                 new KeyValuePair<string, string>("senha", _senha)
             };
 

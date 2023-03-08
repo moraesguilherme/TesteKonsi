@@ -48,17 +48,25 @@
               "target": "Package",
               "version": "[1.11.46, )"
             },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[7.0.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.2, )"
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [

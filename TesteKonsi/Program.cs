@@ -27,7 +27,7 @@ namespace TesteKonsi
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://localhost:7062");
+                    webBuilder.UseUrls("http://localhost:5001");
                 });
     }
 }
