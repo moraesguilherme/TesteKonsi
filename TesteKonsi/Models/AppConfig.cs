@@ -19,10 +19,5 @@ namespace TesteKonsi.Models
         public static string Usuario { get; set; }
         public static string Senha { get; set; }
 
-        //public AppConfig()
-        //{
-        //    Usuario = configuration.GetSection("AppSettings:USUARIO").Value;
-        //    Senha = configuration.GetSection("AppSettings:SENHA").Value;
-        //}
     }
 }

@@ -49,20 +49,21 @@ namespace TesteKonsi.Crawler
 
         public async Task<string> RealizarBuscaBeneficio()
         {
-            // 1. Fazer a requisição para a página de login do portal
             var loginPageUrl = "http://extratoclube.com.br/";
             var httpClient = new HttpClient();
             var loginPageResponse = await httpClient.GetAsync(loginPageUrl);
             var loginPageHtml = await loginPageResponse.Content.ReadAsStringAsync();
-            //teste
 
-            // 2. Esperar a carga do script JavaScript antes de procurar pelo formulário de login
-            await Task.Delay(1000); // aguarda 1 segundo
+            while (loginPageHtml.Contains("<html><head></head><body></body></html>"))
+            {
+                await Task.Delay(100);
+                loginPageResponse = await httpClient.GetAsync(loginPageUrl);
+                loginPageHtml = await loginPageResponse.Content.ReadAsStringAsync();
+            }
 
             var document = new HtmlDocument();
             document.LoadHtml(loginPageHtml);
 
-            // Fechar popup de novidades recentes, caso esteja aberto
             var popup = document.DocumentNode.SelectSingleNode("//form[contains(@class,'login-form')]");
             if (popup != null)
             {
@@ -106,20 +107,17 @@ namespace TesteKonsi.Crawler
             var loginResultResponse = await httpClient.PostAsync(loginActionUrl, new FormUrlEncodedContent(postData));
             var loginResultHtml = await loginResultResponse.Content.ReadAsStringAsync();
 
-            // 3. Verificar se o login foi bem-sucedido
             if (!loginResultHtml.Contains("Deslogar"))
             {
                 throw new Exception("Não foi possível fazer login no portal");
             }
 
-            // 4. Acessar a página de busca de benefícios
             var buscarBeneficiosUrl = "http://extratoclube.com.br/beneficios/busca/";
             var buscarBeneficiosResponse = await httpClient.GetAsync(buscarBeneficiosUrl);
             var buscarBeneficiosHtml = await buscarBeneficiosResponse.Content.ReadAsStringAsync();
 
             document.LoadHtml(buscarBeneficiosHtml);
 
-            // 5. Preencher o campo de CPF e realizar a busca
             var cpfField = document.DocumentNode.SelectSingleNode("//input[@name='cpf']");
             if (cpfField != null)
             {
@@ -135,10 +133,8 @@ namespace TesteKonsi.Crawler
                 await httpClient.GetAsync(fullBuscarUrl);
             }
 
-            // 6. Esperar a página de resultados carregar completamente
             await Task.Delay(5000);
 
-            // 7. Extrair a mensagem do resultado da busca e retornar como resposta
             var resultadoHtml = GetHtmlFromUrl(buscarBeneficiosUrl);
 
             document.LoadHtml(resultadoHtml);

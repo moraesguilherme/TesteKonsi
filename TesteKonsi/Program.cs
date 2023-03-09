@@ -8,7 +8,6 @@ namespace TesteKonsi
         {
             var host = CreateHostBuilder(args).Build();
 
-            // Carrega as variáveis de ambiente a partir do arquivo appsettings.json
             var config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
